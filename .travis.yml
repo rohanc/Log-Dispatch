@@ -8,17 +8,10 @@ addons:
 language: perl
 perl:
   - 5.10.1
-  - 5.10.1-thr
-matrix:
-  allow_failures:
-    - perl: blead
-    - perl: blead-thr
-  include:
-    - env: COVERAGE=1
-      perl: '5.22'
 env:
   global:
     - RELEASE_TESTING=1
     - AUTHOR_TESTING=1
+    - TRAVIS_PERL_DEBUG=1
 before_install:
   - eval $(curl https://travis-perl.github.io/init) --auto
